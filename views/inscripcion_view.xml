@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_curso_inscripcion_form" model="ir.ui.view">
+        <field name="name">curso.inscripcion.form</field>
+        <field name="model">curso.inscripcion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Información general">
+                            <field name="curso_id" />
+                            <field name="alumno_id" />
+                            <field name="correo" />
+                            <field name="telefono" />
+                            <field name="modalidad" />
+                            <!-- <field name="tarifa_id" /> -->
+                            <field name="estado" />
+                        </group>
+                        <!-- <group string="Materiales del curso">
+                            <field name="producto" widget="many2many_tags" />
+                            <field name="material_escritorio" />
+                            <field name="confirmacion" />
+                        </group> -->
+                    </group>
+                    <group>
+                        <group string="Asistencias">
+                            <!-- <field name="curso_id" readonly="1" /> -->
+                            <field name="num_sesiones" />
+                            <field name="sesion_1" invisible="num_sesiones &lt; 1" />
+                            <field name="sesion_2" invisible="num_sesiones &lt; 2" />
+                            <field name="sesion_3" invisible="num_sesiones &lt; 3" />
+                            <field name="sesion_4" invisible="num_sesiones &lt; 4" />
+                            <field name="sesion_5" invisible="num_sesiones &lt; 5" />
+                            <field name="sesion_6" invisible="num_sesiones &lt; 6" />
+                            <field name="sesion_7" invisible="num_sesiones &lt; 7" />
+                            <field name="sesion_8" invisible="num_sesiones &lt; 8" />
+                            <field name="numero_asistencias" />
+                            <field name="puntos_por_asistencia" />
+                        </group>
+                        <group string="Notas de exámenes">
+                            <field name="num_examenes" />
+                            <field name="examen_1" invisible="num_examenes &lt; 1" />
+                            <field name="examen_2" invisible="num_examenes &lt; 2" />
+                            <field name="examen_3" invisible="num_examenes &lt; 3" />
+                            <field name="promedio_final" />
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Notificación de notas">
+                            <field name="notificacion_examen_1" invisible="num_examenes &lt; 1" />
+                            <field name="notificacion_examen_2" invisible="num_examenes &lt; 2" />
+                            <field name="notificacion_examen_3" invisible="num_examenes &lt; 3" />
+                        </group>
+                        <group string="Certificado">
+                            <field name="cod_certificado"/>
+                            <field name="nota_certificado" />
+                            <field name="envio_notas_finales" />
+                            <field name="confirmo_nombres_apellidos" />
+                            <field name="foto_certificado" />
+                        </group>
+                    </group>
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="activity_ids" widget="mail_activity" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de árbol de Inscripción -->
+    <record id="view_curso_inscripcion_tree" model="ir.ui.view">
+        <field name="name">curso.inscripcion.tree</field>
+        <field name="model">curso.inscripcion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" />
+                <field name="alumno_id" />
+                <field name="usuario" />
+                <!-- <field name="tarifa_id" /> -->
+                <field name="numero_asistencias" />
+                <field name="puntos_por_asistencia" />
+                <field name="promedio_final" />
+                <field name="nota_certificado" />
+                <field name="envio_notas_finales" />
+                <field name="confirmo_nombres_apellidos" />
+                <field name="foto_certificado" />
+                <field name="estado" widget="badge" 
+                decoration-danger="estado == 'creado'"
+                decoration-warning="estado == 'comprobado'"
+                decoration-success="estado == 'pedido'"
+                decoration-info="estado == 'enviado'"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_curso_inscripcion_search" model="ir.ui.view">
+        <field name="name">curso.inscripcion.search</field>
+        <field name="model">curso.inscripcion</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- Añadir campos para búsqueda -->
+                <field name="curso_id" string="Curso"/>
+                <field name="alumno_id" string="Alumno"/>
+                <field name="usuario" string="Usuario"/>
+            </search>
+        </field>
+    </record>
+    <!-- Acción para la Inscripción -->
+    <record id="action_curso_inscripcion" model="ir.actions.act_window">
+        <field name="name">Inscripciones</field>
+        <field name="res_model">curso.inscripcion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

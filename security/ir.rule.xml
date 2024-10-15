@@ -1,0 +1,51 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Rule for curso -->
+        <record id="curso_curso_rule" model="ir.rule">
+            <field name="name">Curso curso: multi-company</field>
+            <field name="model_id" ref="model_curso_curso" />
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        </record>
+
+        <!-- Rule for alumno -->
+        <record id="curso_alumno_rule" model="ir.rule">
+            <field name="name">Curso alumno: multi-company</field>
+            <field name="model_id" ref="model_curso_alumno" />
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        </record>
+
+        <!-- Rule for detalle -->
+        <record id="curso_detalle_rule" model="ir.rule">
+            <field name="name">Curso detalle: multi-company</field>
+            <field name="model_id" ref="model_curso_detalle" />
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        </record>
+
+        <!-- Rule for tarifa -->
+        <record id="curso_tarifa_rule" model="ir.rule">
+            <field name="name">Curso tarifa: multi-company</field>
+            <field name="model_id" ref="model_curso_tarifa" />
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        </record>
+
+        <!-- Rule for convenio -->
+        <record id="curso_convenio_rule" model="ir.rule">
+            <field name="name">Curso convenio: multi-company</field>
+            <field name="model_id" ref="model_curso_convenio" />
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        </record>
+
+        <!-- Rule for inscripcion -->
+        <record id="curso_inscripcion_rule" model="ir.rule">
+            <field name="name">Curso inscripcion: multi-company</field>
+            <field name="model_id" ref="model_curso_inscripcion" />
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]" />
+        </record>
+    </data>
+</odoo>

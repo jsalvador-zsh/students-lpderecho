@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Definir categoría del módulo -->
+        <record id="module_category_students" model="ir.module.category">
+            <field name="name">Estudiantes</field>
+            <field name="sequence">10</field>
+        </record>
+        
+        <!-- Grupo de Usuario -->
+        <record id="group_estudiantes_user" model="res.groups">
+            <field name="name">Usuario</field>
+            <field name="category_id" ref="module_category_students"/>
+        </record>
+
+        <!-- Grupo de Administrador -->
+        <record id="group_estudiantes_admin" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="module_category_students"/>
+            <field name="implied_ids" eval="[(4, ref('group_estudiantes_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_estudiantes_root"
+        name="Estudiantes"
+        web_icon="students,static/description/icon.png"
+        sequence="10" />
+
+    <menuitem
+        id="menu_cursos"
+        name="Cursos"
+        parent="menu_estudiantes_root"
+        sequence="15" />
+
+    <menuitem
+        id="menu_cursos_cursos"
+        name="Cursos"
+        parent="menu_cursos"
+        action="action_curso_curso" 
+        sequence="20" />
+
+    <menuitem
+        id="menu_alumnos"
+        name="Estudiantes"
+        parent="menu_estudiantes_root"
+        action="action_curso_alumno" />
+
+    <menuitem
+        id="menu_configuracion"
+        name="Configuracion"
+        parent="menu_estudiantes_root"
+        sequence="15" />
+
+    <menuitem
+        id="menu_curso_convenio"
+        name="Convenios"
+        parent="menu_configuracion"
+        action="action_curso_convenio" />
+
+    <menuitem
+        id="menu_tarifas"
+        name="Tarifas"
+        parent="menu_configuracion"
+        action="action_curso_tarifa" />
+
+    <menuitem
+        id="menu_curso_detalle"
+        name="Detalles"
+        parent="menu_configuracion"
+        action="action_curso_detalle" />
+
+    <menuitem
+        id="menu_curso_medio"
+        name="Medios"
+        parent="menu_configuracion"
+        action="action_curso_medio" />
+
+    <menuitem
+        id="menu_curso_inscripcion"
+        name="Inscripciones"
+        parent="menu_cursos"
+        action="action_curso_inscripcion" 
+        sequence="25" />
+
+</odoo>

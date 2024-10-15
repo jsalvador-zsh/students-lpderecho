@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_curso_curso,access.curso.curso.user,model_curso_curso,group_estudiantes_user,1,1,1,0
+access_curso_alumno,access.curso.alumno.user,model_curso_alumno,group_estudiantes_user,1,1,1,0
+access_curso_detalle,access.curso.detalle.user,model_curso_detalle,group_estudiantes_user,1,1,1,0
+access_curso_tarifa,access.curso.tarifa.user,model_curso_tarifa,group_estudiantes_user,1,1,1,0
+access_curso_convenio,access.curso.convenio.user,model_curso_convenio,group_estudiantes_user,1,1,1,0
+access_curso_medio,access.curso.medio.user,model_curso_medio,group_estudiantes_user,1,1,1,0
+access_curso_inscripcion,access.curso.inscripcion.user,model_curso_inscripcion,group_estudiantes_user,1,1,1,0
+
+access_curso_curso,access.curso.curso.admin,model_curso_curso,group_estudiantes_admin,1,1,1,1
+access_curso_alumno,access.curso.alumno.admin,model_curso_alumno,group_estudiantes_admin,1,1,1,1
+access_curso_detalle,access.curso.detalle.admin,model_curso_detalle,group_estudiantes_admin,1,1,1,1
+access_curso_tarifa,access.curso.tarifa.admin,model_curso_tarifa,group_estudiantes_admin,1,1,1,1
+access_curso_convenio,access.curso.convenio.admin,model_curso_convenio,group_estudiantes_admin,1,1,1,1
+access_curso_medio,access.curso.medio.admin,model_curso_medio,group_estudiantes_admin,1,1,1,1
+access_curso_inscripcion,access.curso.inscripcion.admin,model_curso_inscripcion,group_estudiantes_admin,1,1,1,1
